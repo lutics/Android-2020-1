@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/newFragment">
+
+    <fragment
+        android:id="@+id/newFragment"
+        android:name="com.example.android.preinterview.assignment.ui.NewFragment"
+        android:label="EmptyFragment"
+        tools:layout="@layout/new_fragment">
+        <action
+            android:id="@+id/action_newFragment_to_bookDetailActivity"
+            app:destination="@id/bookDetailActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.android.preinterview.assignment.ui.SearchFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/search_fragment">
+        <action
+            android:id="@+id/action_searchFragment_to_searchDetailFragment"
+            app:destination="@id/searchDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchDetailFragment"
+        android:name="com.example.android.preinterview.assignment.ui.SearchDetailFragment"
+        android:label="SearchDetailFragment"
+        tools:layout="@layout/search_detail_fragment">
+        <action
+            android:id="@+id/action_searchDetailFragment_to_bookDetailActivity"
+            app:destination="@id/bookDetailActivity" />
+        <argument
+            android:name="query"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="com.example.android.preinterview.assignment.ui.BookmarkFragment"
+        android:label="BookmarkFragment"
+        tools:layout="@layout/bookmark_fragment">
+        <action
+            android:id="@+id/action_bookmarkFragment_to_bookDetailActivity"
+            app:destination="@id/bookDetailActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.android.preinterview.assignment.ui.HistoryFragment"
+        android:label="HistoryFragment"
+        tools:layout="@layout/history_fragment">
+        <action
+            android:id="@+id/action_historyFragment_to_bookDetailActivity"
+            app:destination="@id/bookDetailActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/bookDetailActivity"
+        android:name="com.example.android.preinterview.assignment.ui.BookDetailActivity"
+        android:label="BookDetailActivity"
+        tools:layout="@layout/book_detail_activity">
+        <argument
+            android:name="isbn13"
+            app:argType="string" />
+    </activity>
+
+</navigation>
